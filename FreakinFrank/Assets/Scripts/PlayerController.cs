@@ -99,10 +99,14 @@ public class PlayerController : MonoBehaviour
             coinSound.Play();
         }
         else if(other.CompareTag("enemy")){
-            print("Collided with enemy!");
+            //Reset the game
+            GameManager.instance.Reset();
         }
         else if(other.CompareTag("goal")){
-            print("Made it!");
+            //Goto next level
+            print("hit");
+            GameManager.instance.IncreaseLevel();
+                       
         }
         
     }
